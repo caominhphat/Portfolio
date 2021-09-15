@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color: white;
+    --second-color: #00aefd;
+    --third-color: white;
+    --main-deg: 45deg;
+    --circle-size: 10px;
+}
+html{
+    background-color: black;
+}
+
+.loading{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.loading div:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+}
+.loading div:nth-child(1)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border: 5px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(45deg);
+    animation: loading 1s infinite;
+    animation-delay: 0.125s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.loading div:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(90deg);
+}
+.loading div:nth-child(2)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border: 5px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(90deg);
+    animation: loading 1s infinite;
+    animation-delay: 0.25s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loading div:nth-child(3){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(135deg);
+}
+.loading div:nth-child(3)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border: 5px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(135deg);
+    animation: loading 1s infinite;
+    animation-delay: 0.375s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loading div:nth-child(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+}
+.loading div:nth-child(4)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border: 5px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(180deg);
+    animation: loading 1s infinite;
+    animation-delay: 0.5s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loading div:nth-child(5){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(225deg);
+}
+.loading div:nth-child(5)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border: 5px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(225deg);
+    animation: loading 1s infinite;
+    animation-delay: 0.625s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loading div:nth-child(6){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(270deg);
+}
+.loading div:nth-child(6)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border:6px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(270deg);
+    animation: loading 1s infinite;
+    animation-delay: 0.75s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loading div:nth-child(7){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(315deg);
+}
+.loading div:nth-child(7)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border: 5px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(315deg);
+    animation: loading 1s infinite;
+    animation-delay: 0.875s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.loading div:nth-child(8){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(360deg);
+}
+.loading div:nth-child(8)::before{
+    content: "";
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 100%;
+    border: 5px solid var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(360deg);
+    animation: loading 1s infinite;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes loading {
+    to{
+        transform: scale(0);
+    }
+}
+
