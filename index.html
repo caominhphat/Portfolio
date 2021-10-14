@@ -24,23 +24,23 @@
       <div id="nav-animation"></div>
       <div class="nav-bar-container">
         <ul class="nav-bar">
-          <li class="active">
+          <li class="active nav-item">
             <a href="#home">HOME</a>
             <div class="underline"></div>
           </li>
-          <li>
-            <a id="phat" href="#about">ABOUT</a>
+          <li class="nav-item">
+            <a href="#about">ABOUT</a>
             <div class="underline"></div>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="#language">LANGUAGE</a>
             <div class="underline"></div>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="#project">PROJECT</a>
             <div class="underline"></div>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="#contact">CONTACT</a>
             <div class="underline"></div>
           </li>
@@ -49,9 +49,9 @@
     </nav>
   </header>
 
-  <main id="fullPage">
+  <main>
     <!-- HOME -->
-    <section id="home" class="section">
+    <section id="home">
       <div id="home-slider" class="carousel slide carousel-fades" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#home-slider" data-slide-to="0" class="active"></li>
@@ -59,7 +59,7 @@
           <li data-target="#home-slider" data-slide-to="2"></li>
         </ol>
 
-        <div class="carousel-inner" style="max-height: 100vh">
+        <div class="carousel-inner" style="height: 100vh">
           <div class="carousel-item active">
             <img src="images/slider_1.jpg" alt="First slide" style="
                   height: 100vh;
@@ -134,7 +134,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about">
       <div class="left">
         <div>
           <h1 class="anim" data-delay="0.1s">ABOUT ME</h1>
@@ -253,7 +253,7 @@
     </section> 
 
     <!-- LANGUAGE -->
-    <section id="language" class="section">
+    <section id="language">
       <div class="container-fluid language page">
         <div class="page-title text-center">
           <h1>LANGUAGE</h1>
@@ -318,7 +318,7 @@
     </section>
 
     <!-- PROJECT -->
-    <section id="project" class="section">
+    <section id="project">
       <div class="container-fluid project page">
         <div class="page-title text-center">
           <h1>PROJECT</h1>
@@ -422,7 +422,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact">
       <div class="container-fluid contact page">
         <div class="page-title text-center">
           <h1>CONTACT</h1>
@@ -463,7 +463,7 @@
       </div>
     </section>
   </main>
-  <footer>
+  <!-- <footer>
     <div class="footer">
       <div class="footer-content">
         <p>
@@ -479,10 +479,12 @@
         <a href=""><i style="font-size: 4rem" class="fab fa-twitter"></i></a>
       </div>
     </div>
-  </footer>
-  <a href="#" class="back-to-top">
+  </footer> -->
+  <a href="#home" class="back-to-top">
     <i class="fas fa-arrow-alt-circle-up"></i>
   </a>
+
+  <!-- <button class="next">aasdsadasdasdasdas</button> -->
   
 
   <script src="vendor/jquery-3.5.1.min.js"></script>
