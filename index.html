@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="vendor/">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="vendor/slick-1.8.1/slick/slick.css" />
 </head>
@@ -48,9 +49,9 @@
     </nav>
   </header>
 
-  <main>
+  <main id="fullPage">
     <!-- HOME -->
-    <section id="home">
+    <section id="home" class="section">
       <div id="home-slider" class="carousel slide carousel-fades" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#home-slider" data-slide-to="0" class="active"></li>
@@ -66,7 +67,7 @@
                   object-fit: cover;
                   object-position: center center;
                 " />
-            <div class="home-content carousel-caption">
+            <div class="home-content carousel-caption anim1" data-delay="0.5s">
               <h1>HELLO!</h1>
               <br />
               <h1>I AM A DEVELOPER</h1>
@@ -87,7 +88,7 @@
                   object-fit: cover;
                   object-position: center center;
                 " />
-            <div class="home-content carousel-caption caption-2">
+            <div class="home-content carousel-caption caption-2 anim1" data-delay="0.5s">
               <h1>BUT !</h1>
               <br />
               <h1>ACTUALLY...</h1>
@@ -108,7 +109,7 @@
                   object-fit: cover;
                   object-position: center center;
                 " />
-            <div class="home-content carousel-caption caption-3">
+            <div class="home-content carousel-caption caption-3 anim1" data-delay="0.5s">
               <h1>I HAVE FOUND OUT MY INSPIRATION </h1>
               <br>
               <h1>TO BE A WEB DEVELOPER</h1>
@@ -133,13 +134,13 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
-      <div class="left" id="anim">
+    <section id="about" class="section">
+      <div class="left">
         <div>
-          <h1>ABOUT ME</h1>
+          <h1 class="anim" data-delay="0.1s">ABOUT ME</h1>
           <div class="avatar"></div>
         </div>
-        <div class="name">
+        <div class="name anim" data-delay="0.1s">
           <h1>CAO MINH PHAT</h1>
           <h2>DEVELOPER</h2>
         </div>
@@ -193,7 +194,7 @@
         </div> 
         <!-- information -->
         <div class="right-of-right">
-          <div class="right-of-right-1">
+          <div class="right-of-right-1 anim" data-delay="0.7s">
 
             <div class="title">
               <p>University</p>
@@ -238,7 +239,7 @@
 
           </div>
 
-          <div class="right-of-right-2">
+          <div class="right-of-right-2 anim" data-delay="1s">
             <aside>
               <h3>Objectives</h3>
               <p>Lorem ipsum dolor sit abore et dolore magna aliqua.</p>
@@ -252,7 +253,7 @@
     </section> 
 
     <!-- LANGUAGE -->
-    <section id="language">
+    <section id="language" class="section">
       <div class="container-fluid language page">
         <div class="page-title text-center">
           <h1>LANGUAGE</h1>
@@ -317,7 +318,7 @@
     </section>
 
     <!-- PROJECT -->
-    <section id="project">
+    <section id="project" class="section">
       <div class="container-fluid project page">
         <div class="page-title text-center">
           <h1>PROJECT</h1>
@@ -343,7 +344,7 @@
                               <stop offset="100%" stop-color="#673ab7" />
                             </linearGradient>
                           </defs>
-                          <circle cx="8rem" cy="8rem" r="7rem" stroke-linecap="round" />
+                          <circle cx="8rem" cy="8rem" r="7rem" stroke-linecap="round" class="anim2" />
                         </svg>
                       </div>
                     </div>
@@ -421,7 +422,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="section">
       <div class="container-fluid contact page">
         <div class="page-title text-center">
           <h1>CONTACT</h1>
@@ -488,6 +489,7 @@
   <script src="vendor/popper.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="vendor/slick-1.8.1/slick/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/script.js"></script>
   <script>
       $('.slider').slick({
@@ -495,10 +497,50 @@
       slidesToScroll: 1,
       centerMode: true,
       draggable: false,
-     
-      
-        
     });
+
+
+    const images = document.querySelectorAll('.anim')
+    var i = 0
+      observer = new IntersectionObserver((entries)=>{
+        
+       entries.forEach(entry => {
+        if(entry.intersectionRatio > 0){
+            entry.target.style.animation = `anim1 1s ${entry.target.dataset.delay}  forwards ease-out`
+            // // i++;
+            // // if(i >= 4){
+            //   images.forEach(image=>{
+            //   observer.unobserve(image);
+            //  })
+            // // }
+          }else{
+            entry.target.style.animation = 'none'
+          }
+       })
+      
+      })
+      
+      images.forEach(image=>{
+        observer.observe(image);
+      })
+
+      const images1 = document.querySelectorAll('.anim1')
+      observer1 = new IntersectionObserver((entries)=>{
+        
+       entries.forEach(entry => {
+        if(entry.intersectionRatio > 0){
+            entry.target.style.animation = `anim2 1s ${entry.target.dataset.delay}  forwards ease-out`
+          }else{
+            entry.target.style.animation = 'none'
+          }
+       })
+      
+      })
+      
+      images1.forEach(image=>{
+        observer1.observe(image);
+      })
+
   </script>
 </body>
 

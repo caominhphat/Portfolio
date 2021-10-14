@@ -53,10 +53,6 @@ $(document).ready(function () {
       // $("html").animate({scrollTop: count}, 1000,function(){
       //   $("html").stop()
       // } );
-   
-      
-    
-      
 
         toggleBackToTop();
     });
@@ -80,15 +76,9 @@ $(document).ready(function () {
         var currentWindowTop = $(window).scrollTop();
         var distance = Math.abs(currentWindowTop - targetTop);
        
-        var v = 1; //2px/ms
+        var v = 1; 
         var time = distance / v;
     
-        // callback function là gì?
-        // Là hàm được truyền vào như là đối số của hàm được gọi (hàm chính)
-        // Hàm callback (hàm phụ) sẽ được gọi khi hàm chính chạy xong 
-    
-        // Hàm vô danh hay được gọi là anonymous function hay clouser function
-        // Bài này updateHashTag là callback function
         $("html").animate({scrollTop: targetTop}, 1000, function () { updateHashTag(hashTag) });
     
     });
@@ -106,6 +96,8 @@ $(document).ready(function () {
       }
       
     },2000/60)
+
+  
 
     $('.language .slick-prev').html('<i class="fas fa-chevron-left"></i>');
     $('.language .slick-next').html('<i class="fas fa-chevron-right"></i>');
@@ -127,22 +119,7 @@ function toggleBackToTop() {
 	}
 }
 
-// window.addEventListener("scroll",myFunction)
-// function myFunction() {
-//   var testDiv = document.getElementById("about");
-//   alert(testDiv.offsetTop);
-// }
 
-// alert($("#about").offset().top)
-// alert(window.innerHeight)
 
-const about = document.querySelector('#anim');
-observer = new IntersectionObserver((entries)=>{
-  console.log(entries);
-  if(entries[0].intersectionRatio > 0){
-    entries[0].target.style.animation = `anim1 2s forwards ease-out`
-  }else{
-    entries[0].target.style.animation = `none`
-  }
-})
-observer.observe(about);
+
+
