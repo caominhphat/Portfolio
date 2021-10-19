@@ -1,31 +1,30 @@
 $(document).ready(function () {
-  window.location.hash = "#home"
+  window.location.hash = "#home";
   $("header li").click(function (e) {
     e.preventDefault();
     $(this).addClass("active");
     $(this).siblings("header li.active").removeClass("active");
   });
- $('#back-to-top').click(function (e) { 
-   e.preventDefault();
+  $("#back-to-top").click(function (e) {
+    e.preventDefault();
     index = 0;
-   var home = document.getElementById('home')
-   home.scrollIntoView({behavior:'smooth'})
-   setTimeout(()=>{
-     window.location.hash = '#home'
-   },500)
+    var home = document.getElementById("home");
+    home.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      window.location.hash = "#home";
+    }, 500);
 
-   li.forEach((el,index)=>{
-     if(el.className.includes('active')){
-       el.classList.remove('active')
-    }
-      if(el.children[0].innerHTML == 'HOME'){
-        el.classList.add('active')
+    li.forEach((el, index) => {
+      if (el.className.includes("active")) {
+        el.classList.remove("active");
       }
-   })
-   $("li>a").css("color", "white");
-   $("li div").css("background-color", "white");
-
- });
+      if (el.children[0].innerHTML == "HOME") {
+        el.classList.add("active");
+      }
+    });
+    $("li>a").css("color", "white");
+    $("li div").css("background-color", "white");
+  });
   var count = 0;
   // Đoạn lệnh này dùng để làm ẩn và hiện menu hoặc nut bakctotop
   // $(window).scroll(function (event) {
@@ -70,39 +69,49 @@ $(document).ready(function () {
   });
 
   $("header li a").click(function (event) {
-
     event.preventDefault();
-   
-    var sections = document.querySelectorAll('section')
-    sections.forEach((section,i)=>{
-      if(this.innerHTML.toLowerCase() == section.getAttribute('id')){
-        index = i
-        console.log(i)
-        section.scrollIntoView({behavior:'smooth'})
-        const hashTag = this.getAttribute('href')
+
+    var sections = document.querySelectorAll("section");
+    sections.forEach((section, i) => {
+      if (this.innerHTML.toLowerCase() == section.getAttribute("id")) {
+        index = i;
+        console.log(i);
+        section.scrollIntoView({ behavior: "smooth" });
+        const hashTag = this.getAttribute("href");
         setTimeout(function () {
           updateHashTag(hashTag);
         }, animationDuration / 2);
 
-        if(section.getAttribute('id') != 'home'){
+        if (section.getAttribute("id") != "home") {
           $("li>a").css("color", "#425e82");
           $("li div").css("background-color", "#425e82");
-        }else{
+        } else {
           $("li>a").css("color", "white");
           $("li div").css("background-color", "white");
         }
+        if(this.innerHTML.toLowerCase() == 'project'){
+          circle.forEach((el) => {
+            console.log(el)
+            el.style.animation = "animate 2s linear forwards";
+          });
+          countNumber();
+        }else{
+          setTimeout(() => {
+            circle.forEach((el) => {
+              el.style.removeProperty("animation");
+            });
+          }, 500);
+        }
       }
-    })
-
+    });
   });
-  
 
   $(".language .slick-prev").html('<i class="fas fa-chevron-left"></i>');
   $(".language .slick-next").html('<i class="fas fa-chevron-right"></i>');
 
   const sections = document.querySelectorAll("section");
   const li = document.querySelectorAll(".nav-item");
-  const circle = document.querySelectorAll('circle');
+  const circle = document.querySelectorAll("circle");
   let index = 0;
   let lastTime = 0;
   const animationDuration = 1000;
@@ -118,7 +127,6 @@ $(document).ready(function () {
       if (index > 3) return;
       index++;
       sections.forEach((section, i) => {
-
         if (i == index) {
           section.scrollIntoView({ behavior: "smooth" });
           if (i != 0) {
@@ -141,16 +149,16 @@ $(document).ready(function () {
             }
           });
 
-          if(i == 2){
-            circle.forEach(el=>{
-              el.style.animation = "animate 2s linear forwards"
-            })
-            countNumber()
-          }else{
+          if (i == 3) {
+            circle.forEach((el) => {
+              el.style.animation = "animate 2s linear forwards";
+            });
+            countNumber();
+          } else {
             setTimeout(() => {
-              circle.forEach(el=>{
-                el.style.removeProperty('animation')
-              })
+              circle.forEach((el) => {
+                el.style.removeProperty("animation");
+              });
             }, 500);
           }
         }
@@ -181,43 +189,41 @@ $(document).ready(function () {
             }
           });
 
-          if(i == 2){
-            circle.forEach(el=>{
-              el.style.animation = "animate 2s linear forwards"
-            })
-            countNumber()
-          }else{
+          if (i == 3) {
+            circle.forEach((el) => {
+              el.style.animation = "animate 2s linear forwards";
+            });
+            countNumber();
+          } else {
             setTimeout(() => {
-              circle.forEach(el=>{
-                el.style.removeProperty('animation')
-              })
+              circle.forEach((el) => {
+                el.style.removeProperty("animation");
+              });
             }, 500);
           }
         }
       });
-
-    
     }
     lastTime = currentTime;
   });
   setInterval(() => {
-    toggleBackToTop()
+    toggleBackToTop();
   }, 200);
 });
 function updateHashTag(hashTag) {
   window.location.hash = hashTag;
 }
 function toggleBackToTop() {
-  const backTop = document.getElementById('back-to-top')
-    if(window.location.hash == '#home'){
-      backTop.style.transform = 'scale(0)'
-      backTop.style.transition = 'transform 0.5s ease-in'
-    }else{
-      backTop.style.transform = 'scale(1)'
-      backTop.style.opacity = '0.8'
-    }
+  const backTop = document.getElementById("back-to-top");
+  if (window.location.hash == "#home") {
+    backTop.style.transform = "scale(0)";
+    backTop.style.transition = "transform 0.5s ease-in";
+  } else {
+    backTop.style.transform = "scale(1)";
+    backTop.style.opacity = "0.8";
   }
- function countNumber(){
+}
+function countNumber() {
   const number = document.getElementsByClassName("number");
 
   let counter = 0;
@@ -231,4 +237,4 @@ function toggleBackToTop() {
       }
     }
   }, 2000 / 60);
- }
+}

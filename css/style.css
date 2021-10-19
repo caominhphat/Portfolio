@@ -164,8 +164,8 @@ p {
   position: relative;
   background-image: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.7) 100%
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.5) 100%
     ),
     url("../images/avatar.jpg");
   background-position: center center;
@@ -251,9 +251,17 @@ p {
   position: absolute;
   width: calc(100%/1.2);
   height: calc(100%/1.2);
-  box-shadow: 0 0 0 999px var(--second-color);
+  box-shadow: 0 0 0 999px #425E82;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+}
+
+.b1{
+  box-shadow: 0 0 0 999px #637996;
+}
+
+.b2{
+  box-shadow: 0 0 0 999px #8494AA;
 }
 
 .c {
@@ -261,8 +269,16 @@ p {
   left: calc(100%/3);
   width: calc(100%/7.5);
   height:  calc(100%/7.5);
-  background: var(--second-color);
+  background: #425E82;
   border-radius: 50%;
+}
+
+.c1{
+  background: #637996;
+}
+
+.c2{
+  background: #8494AA;
 }
 
 .d {
@@ -270,9 +286,17 @@ p {
   top: calc(100%/3);
   width: calc(100%/7.5);
   height:  calc(100%/7.5);
-  background: var(--second-color);
+  background: #425E82;
   border-radius: 50%;
 }
+
+.d1{
+  background: #637996;
+}
+.d2{
+  background: #8494AA;
+}
+
 
 .e {
   position: absolute;
@@ -281,7 +305,15 @@ p {
   height:calc(  100%*15/13/3*2 - 100%*15/13/7.5/2*2 );
   border-radius: 50%;
   background: none;
-  box-shadow: 0 0 0 999px var(--second-color);
+  box-shadow: 0 0 0 999px #425E82;
+}
+
+.e1{
+  box-shadow: 0 0 0 999px #637996;
+}
+
+.e2{
+  box-shadow: 0 0 0 999px #8494AA;
 }
 .f {
   position: absolute;
@@ -319,9 +351,16 @@ p {
   display: block;
   font-size: 1.4rem;
   position: absolute;
-  color: var(--second-color);
+  color: #425E82;
   top: 0.2rem;
   left: 0.2rem;
+}
+
+#i1{
+  color: #637996;
+}
+#i2{
+  color: #8494AA;
 }
 #about > .right .right-of-right{
   width: 90%;
@@ -386,13 +425,13 @@ p {
 .right-of-right-2 aside p {
   font-size: 1.5rem;
 }
-
+/* LANGUAGE  */
 .page{
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  padding: 5rem;
+  padding: 0;
 }
 
 
@@ -416,86 +455,94 @@ p {
   align-items: center;
 }
 
-/* LANGUAGE  */
-.language .page-content{
+
+
+.card{
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100vw;
+  border: none;
+}
+
+.slick-slide img{
+  margin: 0 auto;
+  max-width: 15rem;
+  margin-bottom: 2rem;
+  max-height: 15rem;
+
+}
+.item{
+  padding: 1rem;
+  outline:none;
+ 
+}
+
+.item-inner{
+  background: linear-gradient(45deg, #ff6600, #fff000);
+  border-radius: 1.8rem;
+  text-align: center;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),0 6px 20px rgba(0, 0, 0, 0.19); 
+}
+
+.item2 .item-inner{
+  background: linear-gradient(45deg, #0060ff, #fe0ff0);
+}
+.item3 .item-inner{
+  background: linear-gradient(45deg, #00c0ff, #5ad607);
+}
+.item4 .item-inner{
+  background: linear-gradient(45deg, #ffd200, #07d676);
+}
+.item5 .item-inner{
+  background: linear-gradient(45deg, #0b618a, #07d6b9);
+}
+.item6 .item-inner{
+  background: linear-gradient(45deg, #0060ff, #07d6b9);
+}
+
+.slick-slide .img{
+  height: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.language .row-wrapper{
-  width: 80%;
+.slick-slide{
+transform: scale(0.9);
+opacity: 0.3;
+transition: all ease .8s ;
 }
-.language .row{
-  position: relative;
-}
-
-.language .slider{
-  width: 100%;
-}
-.language img{
-  width: 100%;
+.slick-slide.slick-current{
+transform: scale(1);
+opacity: 1;
 }
 
-.language .details{
-  display: inline-block;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),0 6px 20px rgba(0, 0, 0, 0.19); 
-  padding: 20px;
-  border-radius: 20px;
-  width: 50%;
-  box-sizing: unset;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.slick-arrow{
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 100;
+border: none;
+font-size: 3rem;
+cursor: pointer;
 }
-.language .details p{
-  text-align: left;
-}
-.language .box-info{
-  width: 0;
-  min-width: 100%;
-}
-.language .slick-slide{
-  transform: scale(0.8);
-  opacity: 0.3;
-  transition: all .5s ease-in;
-}
-.language .slick-slider{
-  margin: 0;
-}
-.language .slick-slide.slick-current{
-  transform: scale(1);
-  opacity: 1;
+.slider .right-arrow{
+right: 1rem; 
 }
 
-.language .slick-arrow{
-  position: absolute;
-  display: inline-block;
-  bottom: 0;
-  z-index: 99;
-  padding: 0.8rem 1.5rem;
-  outline: none;
-  border: none;
+.slider .left-arrow{
+left: 1rem;
 }
 
-.language .slick-next{
-  left: 51%;
-  background-color: var(--second-color);
-  color: var(--main-color);
-  font-size: 1.5rem;
-  border-radius: 50%;
+.item .box-info{
+color:white;
 }
-.language .slick-prev{
-  left: 47%;
-  background-color: var(--second-color);
-  color: var(--main-color);
-  font-size: 1.5rem;
-  border-radius: 50%;
-}
-
-
-.language .slick-list{
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+.slick-slider{
+ 
+  background: #f7f7f7;
+  
 }
 
 
@@ -724,43 +771,72 @@ svg{
   
 }
 
-.anim, .anim1{
+.anim, .anim1, .anim2, .anim3, .anim4, .anim5{
   opacity: 0;
 }
-@keyframes anim1 {
-  0%{
-    transform: translateY(100px);
+
+
+@keyframes anim {
+  from{
+    transform: rotate(0deg) scale(0);
     opacity: 0;
   }
-  25%{
-    /* transform: translate(-50px,-30px); */
-    opacity: 0.2;
+  to{
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
   }
-  50%{
-    /* transform: translate(-70px,-50px); */
-    opacity: 0.5;
+}
+@keyframes anim1 {
+  from{
+    transform: translateY(30rem);
+    opacity: 0;
   }
-  100%{
+  to{
     transform: translate(0,0);
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
 @keyframes anim2 {
-  0%{
-    transform: translateX(-100px);
+  from{
+    transform: translateX(200px);
     opacity: 0;
   }
-  25%{
-    /* transform: translate(-50px,-30px); */
-    opacity: 0.2;
-  }
-  50%{
-    /* transform: translate(-70px,-50px); */
-    opacity: 0.5;
-  }
-  100%{
+  to{
     transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim3 {
+  from{
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim4 {
+  from{
+    transform: scale(0);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes anim5 {
+  from{
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  to{
+    transform: rotate(360deg) scale(1);
     opacity: 0.8;
   }
 }
