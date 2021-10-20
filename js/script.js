@@ -1,4 +1,11 @@
+
+
 $(document).ready(function () {
+
+  setTimeout(function(){
+    $('.loading-wrap').fadeOut('slow');
+  },3000)
+
   window.location.hash = "#home";
   $("header li").click(function (e) {
     e.preventDefault();
